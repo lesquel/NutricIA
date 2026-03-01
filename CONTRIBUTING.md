@@ -34,6 +34,10 @@ This project adheres to the [Contributor Covenant Code of Conduct](CODE_OF_CONDU
    make dev
    ```
 
+### CI Submodule Access
+
+If `backend/` and `frontend/` repositories are private, configure a repository secret named `SUBMODULES_TOKEN` in GitHub Actions with read access to both submodule repositories.
+
 ## Development Workflow
 
 ### Branch Naming
@@ -59,8 +63,14 @@ This project adheres to the [Contributor Covenant Code of Conduct](CODE_OF_CONDU
    make lint
    make test
    ```
-4. Commit following [Conventional Commits](#commit-messages)
-5. Push and open a Pull Request
+4. Install and enable pre-commit hooks:
+   ```bash
+   pip install pre-commit
+   pre-commit install
+   pre-commit run --all-files
+   ```
+5. Commit following [Conventional Commits](#commit-messages)
+6. Push and open a Pull Request
 
 ## Coding Standards
 
