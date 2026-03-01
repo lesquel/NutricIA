@@ -98,6 +98,22 @@ If `backend/` and `frontend/` repositories are private, configure a repository s
 5. Commit following [Conventional Commits](#commit-messages)
 6. Push and open a Pull Request
 
+### Submodule Commit Flow
+
+Because `backend/` and `frontend/` are git submodules, commit in this order:
+
+1. Commit inside `backend/` and/or `frontend/`
+2. Return to repository root
+3. Commit updated submodule pointers in root repo
+
+Example:
+
+```bash
+cd backend && git add -A && git commit -m "fix(backend): ..."
+cd ../frontend && git add -A && git commit -m "fix(frontend): ..."
+cd .. && git add backend frontend && git commit -m "chore: update submodule refs"
+```
+
 ## Coding Standards
 
 ### Backend (Python)
