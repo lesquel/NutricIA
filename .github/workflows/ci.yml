@@ -127,7 +127,19 @@ jobs:
         run: uv run alembic upgrade head
 
       - name: Run tests
-        run: uv run pytest -v --tb=short
+        shell: bash
+        run: |
+          set +e
+          uv run pytest -v --tb=short
+          status=$?
+          set -e
+
+          if [[ $status -eq 5 ]]; then
+            echo "No backend tests collected yet (pytest exit code 5). Marking step as successful."
+            exit 0
+          fi
+
+          exit $status
 
   # ── Frontend ───────────────────────────────
   frontend-lint:
