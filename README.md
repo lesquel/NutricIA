@@ -30,6 +30,23 @@ NutricIA is a mobile-first calorie tracker that uses **AI vision** to scan your 
 - **Hydration Tracker** — Tap cups to track daily water intake
 - **Settings & Goals** — Customize calorie/water targets and dietary preferences
 
+### Screenshots
+
+- Mobile gallery: [reviews/mobile](reviews/mobile)
+- Web gallery: [reviews/web](reviews/web)
+
+#### Mobile
+
+![Mobile - Dashboard](reviews/mobile/WhatsApp%20Image%202026-03-01%20at%2012.52.39%20PM.jpeg)
+![Mobile - Journal](reviews/mobile/WhatsApp%20Image%202026-03-01%20at%2012.52.40%20PM.jpeg)
+![Mobile - Garden](reviews/mobile/WhatsApp%20Image%202026-03-01%20at%2012.52.41%20PM.jpeg)
+![Mobile - Scanner](reviews/mobile/WhatsApp%20Image%202026-03-01%20at%2012.52.42%20PM.jpeg)
+
+#### Web
+
+![Web - Dashboard](reviews/web/Captura%20desde%202026-03-01%2012-46-53.png)
+![Web - Journal](reviews/web/Captura%20desde%202026-03-01%2012-47-05.png)
+
 ---
 
 ## Tech Stack
