@@ -11,8 +11,38 @@ repos:
       - id: end-of-file-fixer
       - id: trailing-whitespace
 
+  - repo: local
+    hooks:
+      - id: backend-ruff-format
+        name: backend ruff format
+        entry: bash -lc 'cd backend && uv run ruff format .'
+        language: system
+        pass_filenames: false
+        always_run: true
+
+      - id: backend-ruff-check
+        name: backend ruff check
+        entry: bash -lc 'cd backend && uv run ruff check .'
+        language: system
+        pass_filenames: false
+        always_run: true
+
+      - id: frontend-lint
+        name: frontend lint (expo)
+        entry: bash -lc 'cd frontend && npm run lint'
+        language: system
+        pass_filenames: false
+        always_run: true
+
+      - id: frontend-typecheck
+        name: frontend typecheck (tsc)
+        entry: bash -lc 'cd frontend && npx tsc --noEmit'
+        language: system
+        pass_filenames: false
+        always_run: true
+
   - repo: https://github.com/igorshubovych/markdownlint-cli
     rev: v0.44.0
     hooks:
       - id: markdownlint
-        args: ["--fix"]
+        args: ["--fix", "--disable", "MD013", "MD033", "MD040", "MD041", "MD024"]

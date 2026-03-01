@@ -21,15 +21,20 @@ This project adheres to the [Contributor Covenant Code of Conduct](CODE_OF_CONDU
 
 1. **Fork** the repository
 2. **Clone** your fork with submodules:
+
    ```bash
    git clone --recurse-submodules https://github.com/YOUR_USERNAME/NutricIA.git
    cd NutricIA
    ```
+
 3. **Set up** the development environment:
+
    ```bash
    bash scripts/setup.sh
    ```
+
 4. **Start** the stack:
+
    ```bash
    make dev
    ```
@@ -54,21 +59,42 @@ If `backend/` and `frontend/` repositories are private, configure a repository s
 ### Steps
 
 1. Create a branch from `main`:
+
    ```bash
    git checkout -b feature/your-feature
    ```
+
 2. Make your changes
 3. Run linting and tests:
+
    ```bash
    make lint
    make test
    ```
+
 4. Install and enable pre-commit hooks:
+
    ```bash
    pip install pre-commit
    pre-commit install
    pre-commit run --all-files
    ```
+
+   Alternative (no global install):
+
+   ```bash
+   uvx pre-commit run --all-files
+   ```
+
+   Hooks run checks for both `backend/` (Ruff format/lint) and `frontend/` (Expo lint + TypeScript).
+   Note: `backend/` and `frontend/` are git submodules; hooks execute commands inside each submodule.
+
+   Ensure frontend dependencies are installed before running hooks:
+
+   ```bash
+   cd frontend && npm install
+   ```
+
 5. Commit following [Conventional Commits](#commit-messages)
 6. Push and open a Pull Request
 
@@ -102,6 +128,7 @@ make format
 
 ```bash
 make lint
+npm run typecheck
 ```
 
 ## Commit Messages

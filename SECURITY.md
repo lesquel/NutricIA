@@ -14,7 +14,7 @@ We take the security of NutricIA seriously. If you believe you have found a secu
 
 ### How to Report
 
-Send an email to **nutricia@proton.me** with:
+Send an email to **<nutricia@proton.me>** with:
 
 1. **Description** of the vulnerability
 2. **Steps to reproduce** the issue

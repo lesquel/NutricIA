@@ -6,7 +6,8 @@ Get the images and code for the following Stitch project's screens:
 
 ID: 13522231946133753532
 
-## Screens:
+## Screens
+
 1. Dashboard
     ID: df7bb8d8e63b435e8929abbb1c842029
 

@@ -80,10 +80,10 @@ docker compose up --build
 
 | Service | URL |
 |---------|-----|
-| Backend API | http://localhost:8000 |
-| API Docs (Swagger) | http://localhost:8000/docs |
-| pgAdmin | http://localhost:5050 |
-| Frontend (Expo) | http://localhost:8081 |
+| Backend API | <http://localhost:8000> |
+| API Docs (Swagger) | <http://localhost:8000/docs> |
+| pgAdmin | <http://localhost:5050> |
+| Frontend (Expo) | <http://localhost:8081> |
 
 ### 4. Run migrations
 
@@ -165,6 +165,30 @@ make logs             # Tail all container logs
 make shell-backend    # Open bash in backend container
 make shell-frontend   # Open bash in frontend container
 make clean            # Remove containers & volumes
+```
+
+---
+
+## Code Quality (Pre-commit)
+
+This repository uses `pre-commit` to enforce quality checks before each commit:
+
+- Python formatting and lint autofix (Ruff) in `backend/`
+- Frontend lint (`expo lint`) in `frontend/`
+- Frontend type-check (`tsc --noEmit`) in `frontend/`
+- Markdown/YAML/JSON/TOML and basic hygiene checks
+
+Install once:
+
+```bash
+pip install pre-commit
+pre-commit install
+```
+
+Run manually for all files:
+
+```bash
+pre-commit run --all-files
 ```
 
 ---
